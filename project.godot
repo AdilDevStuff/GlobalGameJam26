@@ -15,6 +15,10 @@ run/main_scene="uid://84l5kyexw5o2"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Events="*uid://kwjbn3aqk62g"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -68,3 +72,4 @@ restart={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.20405686, 0.20405686, 0.20405686, 1)

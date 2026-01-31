@@ -25,3 +25,4 @@ func _input(_event: InputEvent) -> void:
 
 func switch_mask(selected_mask: Masks) -> void:
 	current_mask = selected_mask
+	Events.MaskSwitched.emit(selected_mask)
