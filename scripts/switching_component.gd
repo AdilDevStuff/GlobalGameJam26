@@ -4,16 +4,17 @@ class_name SwitchingComponent
 enum Masks {
 	NONE,
 	RED,
-	GREEN,
 	BLUE,
+	GREEN,
 }
-
-@export var current_mask: Masks = Masks.NONE
 
 var mask_index: int = 0
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("switch_red"):
+	if Input.is_action_just_pressed("switch_none"):
+		switch_mask(Masks.NONE)
+		print("No Mask Activated")
+	elif Input.is_action_just_pressed("switch_red"):
 		switch_mask(Masks.RED)
 		print("Red Mask Activated")
 	elif Input.is_action_just_pressed("switch_blue"):
@@ -24,5 +25,5 @@ func _input(_event: InputEvent) -> void:
 		print("Green Mask Activated")
 
 func switch_mask(selected_mask: Masks) -> void:
-	current_mask = selected_mask
+	Globals.current_mask = selected_mask
 	Events.MaskSwitched.emit(selected_mask)
