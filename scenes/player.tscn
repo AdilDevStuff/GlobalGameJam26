@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://eitrl4f7f3hp" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://ceqpilsie3yls" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://cgywxyffl1snf" path="res://addons/trail_2d/trail_2d.gd" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://1rjsrrgoq37b" path="res://assets/assets_None.png" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://c64ltd2c17qc5" path="res://assets/player_switch_particles.png" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(64, 64)
@@ -36,6 +38,34 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(72, 70)
 
+[sub_resource type="Curve" id="Curve_fjrip"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5562914, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_smehm"]
+curve = SubResource("Curve_fjrip")
+
+[sub_resource type="Curve" id="Curve_tuyoq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49668872, 0.9999999), 0.0, 0.0, 0, 0, Vector2(0.9801324, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fjrip"]
+curve = SubResource("Curve_tuyoq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qlg0r"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 55.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 150.0
+radial_accel_max = 180.0
+scale_min = 0.39999998
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_fjrip")
+alpha_curve = SubResource("CurveTexture_smehm")
+
 [sub_resource type="Animation" id="Animation_tuyoq"]
 length = 0.001
 tracks/0/type = "value"
@@ -49,6 +79,109 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rectangle:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rectangle:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Trail:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "death"
+length = 0.2
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathParticles")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"restart"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rectangle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Trail:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
 }
 
 [sub_resource type="Animation" id="Animation_qlg0r"]
@@ -68,13 +201,32 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "switch"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rectangle:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(64, 64), Vector2(49.225, 77.76), Vector2(64, 64)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuyoq"]
 _data = {
 &"RESET": SubResource("Animation_tuyoq"),
-&"flash": SubResource("Animation_qlg0r")
+&"death": SubResource("Animation_smehm"),
+&"flash": SubResource("Animation_qlg0r"),
+&"switch": SubResource("Animation_fjrip")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1007037810 node_paths=PackedStringArray("sprite", "ability_timer", "aura_sprite", "ability_bar", "anim_player") groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1007037810 node_paths=PackedStringArray("sprite", "ability_timer", "aura_sprite", "ability_bar", "anim_player", "death_particles", "switch_particles") groups=["player"]]
 z_index = 1
 collision_mask = 30
 script = ExtResource("1_g2els")
@@ -86,6 +238,8 @@ ability_timer = NodePath("AbilityTimer")
 aura_sprite = NodePath("AuraSprite")
 ability_bar = NodePath("AbilityBar")
 anim_player = NodePath("AnimationPlayer")
+death_particles = NodePath("DeathParticles")
+switch_particles = NodePath("SwitchParticles")
 
 [node name="Rectangle" type="Node2D" parent="." unique_id=716647370]
 script = ExtResource("3_qhqgy")
@@ -106,12 +260,14 @@ metadata/_custom_type_script = "uid://ceqpilsie3yls"
 visible = false
 shape = SubResource("RectangleShape2D_3vyb7")
 
-[node name="SwitchingComponent" type="Node" parent="." unique_id=1396908888 node_paths=PackedStringArray("ability_timer", "ability_bar", "cooldown_timer", "cooldown_info") groups=["switching"]]
+[node name="SwitchingComponent" type="Node" parent="." unique_id=1396908888 node_paths=PackedStringArray("ability_timer", "ability_bar", "cooldown_timer", "cooldown_info", "animation_player", "switch_particles") groups=["switching"]]
 script = ExtResource("3_dqkch")
 ability_timer = NodePath("../AbilityTimer")
 ability_bar = NodePath("../AbilityBar")
 cooldown_timer = NodePath("../CooldownTimer")
 cooldown_info = NodePath("../CooldownInfo")
+animation_player = NodePath("../AnimationPlayer")
+switch_particles = NodePath("../SwitchParticles")
 
 [node name="Trail" type="Line2D" parent="." unique_id=921361006]
 z_index = -1
@@ -124,6 +280,7 @@ length = 20
 metadata/_custom_type_script = "uid://cgywxyffl1snf"
 
 [node name="AbilityBar" type="ProgressBar" parent="." unique_id=2063169097]
+visible = false
 offset_left = -69.0
 offset_top = -70.0
 offset_right = 69.0
@@ -154,6 +311,24 @@ collision_mask = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision" unique_id=1426782674]
 shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1341370557]
+emitting = false
+amount = 15
+texture = ExtResource("6_tuyoq")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qlg0r")
+
+[node name="SwitchParticles" type="GPUParticles2D" parent="." unique_id=888601029]
+emitting = false
+texture = ExtResource("7_fjrip")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qlg0r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1861513500]
 libraries/ = SubResource("AnimationLibrary_tuyoq")

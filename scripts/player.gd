@@ -25,11 +25,14 @@ var current_health: int = 0
 @export var aura_sprite: Ellipse
 @export var ability_bar: ProgressBar
 @export var anim_player: AnimationPlayer
+@export var death_particles: GPUParticles2D
+@export var switch_particles: GPUParticles2D
 
 # Private
 var current_speed: float
 
 var jump_count: int = 0
+var direction: int = 0
 
 var is_grounded: bool = false
 var can_attack: bool = false
@@ -57,7 +60,7 @@ func movement(delta: float) -> void:
 	if control_locked:
 		return
 	
-	var direction := Input.get_axis("left", "right")
+	direction = Input.get_axis("left", "right")
 	if direction and current_health > 0:
 		velocity.x = direction * current_speed
 	else:
@@ -66,8 +69,17 @@ func movement(delta: float) -> void:
 func jump() -> void:
 	if Input.is_action_just_pressed("jump") and jump_count > 0:
 		velocity.y = -jump_force
+		var tween := create_tween()
+		tween.tween_property(sprite, "rotation_degrees", snapped(sprite.rotation_degrees + 90.0 * direction, 90.0), 0.15)
+		await tween.finished
+		sprite.rotation_degrees = 0
+
 		jump_count -= 1
-	
+
+func new_tween(object: Object, nodepath: NodePath, final_value: Variant, duration: float) -> void:
+	var tween = create_tween()
+	tween.tween_property(object, nodepath, final_value, duration)
+
 func gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
@@ -82,7 +94,6 @@ func apply_knockback(from_position: Vector2) -> void:
 	velocity.x = knockback_dir * (knockback_force + abs(velocity.x) * 0.4)
 	
 	velocity.y = -knockback_up_force
-	
 	jump_count = max_jump_limit - 1
 	
 	control_locked = true
@@ -100,6 +111,8 @@ func _on_damaged(damage: int) -> void:
 
 func _on_killed() -> void:
 	if get_tree().current_scene != null:
+		anim_player.play("death")
+		await anim_player.animation_finished
 		SceneTransition.reload_scene()
 
 func _on_collision_body_entered(body: Node2D) -> void:

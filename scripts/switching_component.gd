@@ -8,6 +8,8 @@ class_name SwitchingComponent
 var can_switch: bool = true
 
 @export var cooldown_info: Label
+@export var animation_player: AnimationPlayer
+@export var switch_particles: GPUParticles2D
 
 func _input(_event: InputEvent) -> void:
 	if can_switch:
@@ -24,8 +26,13 @@ func _process(_delta: float) -> void:
 	cooldown_info.text = "Cooldown %.2f" % cooldown_timer.time_left 
 
 func switch_mask(selected_mask: Globals.Masks) -> void:
-	ability_bar.show()
+	if selected_mask == Globals.current_mask:
+		return
 
+	ability_bar.show()
+	animation_player.play("switch")
+	switch_particles.restart()
+	
 	if selected_mask != Globals.Masks.NONE: 
 		ability_timer.start(5.0)
 	else:
