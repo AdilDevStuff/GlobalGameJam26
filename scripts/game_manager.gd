@@ -17,18 +17,22 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 	#print(Globals.Masks.keys()[Globals.current_mask])
 	match mask:
 		Globals.Masks.NONE: # None
+			player.aura_sprite.hide()
 			player.modulate = Color.WHITE
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.RED: # Red
+			player.aura_sprite.show()
 			player.modulate = Color.RED
 			player.can_attack = true
 			hidden_tileset.enabled = false
 		Globals.Masks.BLUE: # Blue
+			player.aura_sprite.hide()
 			player.modulate = Color.BLUE
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.GREEN: # Green
+			player.aura_sprite.hide()
 			player.modulate = Color.GREEN
 			hidden_tileset.enabled = true
 			player.can_attack = false

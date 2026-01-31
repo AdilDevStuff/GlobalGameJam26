@@ -14,6 +14,7 @@ var current_health: int = 0
 @export var ability_timer: Timer
 
 @export var sprite: Rectangle
+@export var aura_sprite: Ellipse
 
 # Private
 var current_speed: float
@@ -73,3 +74,5 @@ func _on_collision_body_entered(body: Node2D) -> void:
 		Events.Damaged.emit(body.current_damage)
 	if body.is_in_group("lava"):
 		get_tree().call_deferred("reload_current_scene")
+	if body.is_in_group("spikes"):
+		Events.Damaged.emit(25)

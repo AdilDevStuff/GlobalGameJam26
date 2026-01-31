@@ -11,14 +11,10 @@ func _ready() -> void:
 func on_mask_switched(mask) -> void:
 	match mask:
 		0: # None
-			ellipse.hide()
 			current_damage = 50
 		1: # Red
-			ellipse.show()
 			current_damage = 10
 		2: # Blue
-			ellipse.hide()
 			current_damage = 0
 		3: # Green
-			ellipse.hide()
 			current_damage = 30

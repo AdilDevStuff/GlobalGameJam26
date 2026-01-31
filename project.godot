@@ -34,6 +34,7 @@ enabled=PackedStringArray("res://addons/2d_shapes/plugin.cfg", "res://addons/scr
 player=""
 enemy=""
 lava=""
+spikes=""
 
 [input]
 
