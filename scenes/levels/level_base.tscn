@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnh0wk05r4c1j" path="res://assets/assets_Red.png" id="3_imdmy"]
 [ext_resource type="Texture2D" uid="uid://23t4kt4vlsfq" path="res://assets/assets_Blue.png" id="4_morta"]
 [ext_resource type="Texture2D" uid="uid://c5gvc0dw4gfdw" path="res://assets/assets_Green.png" id="5_p7rbk"]
+[ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="6_imdmy"]
 [ext_resource type="Script" uid="uid://b2jrodpd2i1c8" path="res://addons/RadialMenu/RadialMenu.gd" id="6_l4xu8"]
 [ext_resource type="Script" uid="uid://b3hprairb2cbt" path="res://scripts/game_manager.gd" id="7_3iy5o"]
 [ext_resource type="PackedScene" uid="uid://dkk6wx1c02l8y" path="res://scenes/player.tscn" id="8_p3ew5"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" uid="uid://dvfmxlxdmpunl" path="res://addons/2d_shapes/shapes/Polygon.gd" id="11_dq8h5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k0juu"]
+font = ExtResource("6_imdmy")
 font_size = 48
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -22,6 +24,11 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav0o"]
 bg_color = Color(1, 0.32681847, 0.32681847, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("9_x2afm")
@@ -483,10 +490,10 @@ health_bar = NodePath("HealthBar")
 [node name="Label" type="Label" parent="UserInterface/GameUI" unique_id=714711454]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 16.0
-offset_right = 446.0
-offset_bottom = 83.0
-text = "Current Mask: Red"
+offset_top = 37.0
+offset_right = 478.0
+offset_bottom = 104.0
+text = "Mask: Red"
 label_settings = SubResource("LabelSettings_k0juu")
 
 [node name="RadialMenu" type="Control" parent="UserInterface/GameUI" unique_id=1746031354]
@@ -503,9 +510,9 @@ icon_scale = 0.2
 
 [node name="HealthBar" type="ProgressBar" parent="UserInterface/GameUI" unique_id=151542073]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 16.0
 offset_top = 91.0
-offset_right = 295.0
+offset_right = 287.0
 offset_bottom = 118.0
 theme_override_styles/background = SubResource("StyleBoxFlat_excbq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_iav0o")
@@ -513,6 +520,7 @@ show_percentage = false
 
 [node name="GameManager" type="Node" parent="." unique_id=201982653 node_paths=PackedStringArray("hidden_tileset", "level_end")]
 script = ExtResource("7_3iy5o")
+next_level_path = null
 hidden_tileset = NodePath("../Tiles/HiddenPlatforms")
 level_end = NodePath("../LevelEnd")
 

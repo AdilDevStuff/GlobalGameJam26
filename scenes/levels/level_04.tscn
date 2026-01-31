@@ -12,7 +12,7 @@ point_count = 2
 [node name="Level04" unique_id=1683291214 instance=ExtResource("1_31sm7")]
 
 [node name="Player" parent="." index="2" unique_id=1007037810]
-position = Vector2(3838, 301)
+position = Vector2(122, 297)
 
 [node name="Camera2D" parent="Player" index="13" unique_id=1914056301]
 limit_bottom = 768

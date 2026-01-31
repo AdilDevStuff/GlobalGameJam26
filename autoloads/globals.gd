@@ -3,8 +3,8 @@ extends Node
 enum Masks {
 	NONE,
 	RED,
-	BLUE,
-	GREEN,
+	GHOST,
+	ENVIRONMENT,
 }
 
 var current_mask: int

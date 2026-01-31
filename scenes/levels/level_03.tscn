@@ -18,6 +18,8 @@ next_level_path = "res://scenes/levels/level_04.tscn"
 position = Vector2(215, 361)
 
 [node name="Camera2D" parent="Player" index="13" unique_id=1914056301]
+limit_top = -59
+limit_right = 4864
 limit_bottom = 768
 
 [node name="Lava" parent="Tiles" parent_id_path=PackedInt32Array(404772371) index="0" unique_id=737266222]

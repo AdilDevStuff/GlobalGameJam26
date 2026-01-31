@@ -19,6 +19,8 @@ next_level_path = "res://scenes/levels/tutorial_level_02.tscn"
 position = Vector2(215, 361)
 
 [node name="Camera2D" parent="Player" index="13" unique_id=1914056301]
+limit_top = -61
+limit_right = 3770
 limit_bottom = 768
 
 [node name="Ground" parent="Tiles" parent_id_path=PackedInt32Array(404772371) index="2" unique_id=718148016]
@@ -45,6 +47,7 @@ offset_left = -55.0
 offset_top = 200.0
 offset_right = 1004.0
 offset_bottom = 512.0
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_j2tva")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true
@@ -57,6 +60,7 @@ offset_left = 1008.0
 offset_top = 200.0
 offset_right = 2067.0
 offset_bottom = 512.0
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_j2tva")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true
@@ -71,6 +75,7 @@ offset_left = 1824.0
 offset_top = 200.0
 offset_right = 2883.0
 offset_bottom = 512.0
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_j2tva")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true

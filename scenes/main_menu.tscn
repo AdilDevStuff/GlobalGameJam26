@@ -7,22 +7,32 @@
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
 font = ExtResource("1_l6cm7")
 font_size = 102
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
 font = ExtResource("1_l6cm7")
 font_size = 101
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font = ExtResource("1_l6cm7")
 font_size = 85
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
 font = ExtResource("1_l6cm7")
 font_size = 135
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
 font = ExtResource("1_l6cm7")
 font_size = 38
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" unique_id=965421232 node_paths=PackedStringArray("buttons")]
 layout_mode = 3
@@ -108,6 +118,8 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="Play" type="Button" parent="Buttons" unique_id=1566678067]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 64
 text = "Play"
@@ -117,6 +129,8 @@ metadata/_custom_type_script = "uid://dqkfdxwaoxl7y"
 
 [node name="Exit" type="Button" parent="Buttons" unique_id=1712652251]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 64
 text = "Exit"

@@ -19,6 +19,8 @@ next_level_path = "res://scenes/levels/level_03.tscn"
 position = Vector2(215, 361)
 
 [node name="Camera2D" parent="Player" index="13" unique_id=1914056301]
+limit_top = -54
+limit_right = 3777
 limit_bottom = 768
 
 [node name="Lava" parent="Tiles" parent_id_path=PackedInt32Array(404772371) index="0" unique_id=737266222]
@@ -51,6 +53,7 @@ offset_left = -55.0
 offset_top = 200.0
 offset_right = 1004.0
 offset_bottom = 512.0
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_uq4xv")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true
@@ -64,6 +67,7 @@ offset_left = 1242.0
 offset_top = 192.0
 offset_right = 2301.0
 offset_bottom = 504.0
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_uq4xv")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true
