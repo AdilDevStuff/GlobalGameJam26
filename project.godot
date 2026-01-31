@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*uid://kwjbn3aqk62g"
 Globals="*uid://cdmghntd1u56b"
+SceneTransition="*uid://c883h12vb0uo8"
 
 [display]
 

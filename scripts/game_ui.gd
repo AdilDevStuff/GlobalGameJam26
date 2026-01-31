@@ -23,10 +23,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("open_radial"):
 		Engine.time_scale = 0.2
 		radial_menu.open_menu(get_viewport_rect().size / 2)
-	#elif Input.is_action_just_released("open_radial"):
-		#radial_menu.close_menu()
 
 func _on_radial_menu_item_selected(id: Variant, position: Variant) -> void:
 	get_tree().call_group("switching", "switch_mask", id)
-	#Globals.current_mask = id
+	Engine.time_scale = 1.0
+
+func _on_radial_menu_menu_closed(menu: Variant) -> void:
 	Engine.time_scale = 1.0
