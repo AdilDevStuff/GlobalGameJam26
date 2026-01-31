@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GlobalGameJam26"
-run/main_scene="uid://84l5kyexw5o2"
+run/main_scene="uid://bntjng2xj52wc"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 
@@ -86,6 +86,14 @@ open_radial={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(151, 9),"global_position":Vector2(158, 46),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="level"
+2d_physics/layer_4="trap"
+2d_physics/layer_5="lava"
 
 [rendering]
 

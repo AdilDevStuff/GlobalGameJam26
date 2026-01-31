@@ -4,7 +4,6 @@ class_name Player
 # Exported
 @export_group("Properties")
 @export var normal_speed: float = 300.0
-#@export var slow_speed: float = 150.0
 @export var jump_force: float = 600.0
 @export var max_jump_limit: int = 2
 
@@ -12,18 +11,20 @@ class_name Player
 @export var knockback_force: float = 450.0
 @export var knockback_up_force: float = 300.0
 @export var knockback_control_lock_time: float = 0.15
+@export_group("Health")
+@export var max_health: int = 100
 
 var knockback_dir: int = 0
 var control_locked := false
 
-@export var max_health: int = 100
 var current_health: int = 0
 
-@export var ability_bar: ProgressBar
-@export var ability_timer: Timer
-
+@export_group("References")
 @export var sprite: Rectangle
+@export var ability_timer: Timer
 @export var aura_sprite: Ellipse
+@export var ability_bar: ProgressBar
+@export var anim_player: AnimationPlayer
 
 # Private
 var current_speed: float
@@ -34,18 +35,17 @@ var is_grounded: bool = false
 var can_attack: bool = false
 
 func _ready() -> void:
-	Events.Damaged.connect(_on_damaged)
-	Events.Killed.connect(_on_killed)
+	Events.killed.connect(_on_killed)
+	Events.damaged.connect(_on_damaged)
 	
 	current_health = max_health
+	Events.health_changed.emit(current_health)
+	
 	current_speed = normal_speed
 	ability_bar.max_value = ability_timer.wait_time
 
 func _physics_process(delta: float) -> void:
 	ability_bar.value = ability_timer.time_left
-	
-	if current_health <= 0:
-		Events.Killed.emit()
 	
 	movement(delta)
 	move_and_slide()
@@ -58,7 +58,7 @@ func movement(delta: float) -> void:
 		return
 	
 	var direction := Input.get_axis("left", "right")
-	if direction:
+	if direction and current_health > 0:
 		velocity.x = direction * current_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
@@ -93,7 +93,10 @@ func apply_knockback(from_position: Vector2) -> void:
 func _on_damaged(damage: int) -> void:
 	if Globals.can_damage_player:
 		current_health -= damage
-		$AnimationPlayer.play("flash")
+		Events.health_changed.emit(current_health)
+		anim_player.play("flash")
+		if current_health <= 0:
+			Events.killed.emit()
 
 func _on_killed() -> void:
 	if get_tree().current_scene != null:
@@ -103,12 +106,12 @@ func _on_collision_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		if Globals.can_damage_player:
 			apply_knockback(body.global_position)
-			Events.Damaged.emit(body.current_damage)
+			Events.damaged.emit(body.current_damage)
 	if body.is_in_group("lava"):
 		if Globals.can_damage_player:
 			apply_knockback(body.global_position)
-			Events.Damaged.emit(25)
+			Events.damaged.emit(25)
 	if body.is_in_group("spikes"):
 		if Globals.can_damage_player:
 			apply_knockback(body.global_position)
-			Events.Damaged.emit(25)
+			Events.damaged.emit(25)

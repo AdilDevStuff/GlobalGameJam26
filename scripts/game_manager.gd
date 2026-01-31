@@ -10,25 +10,28 @@ class_name GameManager
 
 func _ready() -> void:
 	Engine.time_scale = 1.0
+	get_tree().call_group("switching", "switch_mask", Globals.Masks.NONE)
 	hidden_tileset.enabled = false
+	
+	Events.mask_switched.connect(on_mask_switched)
 	level_end.body_entered.connect(_on_level_end_body_entered)
-	Events.MaskSwitched.connect(on_mask_switched)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
 		SceneTransition.reload_scene()
 
 func on_mask_switched(mask: Globals.Masks) -> void:
-	#print(Globals.Masks.keys()[Globals.current_mask])
 	match mask:
 		Globals.Masks.NONE: # None
 			Globals.can_damage_player = true
+			player.collision_mask = 30
 			
 			player.aura_sprite.hide()
 			player.modulate = Color("ffffffff")
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.RED: # Red
+			player.collision_mask = 30
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.show()
@@ -36,6 +39,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			player.can_attack = true
 			hidden_tileset.enabled = false
 		Globals.Masks.BLUE: # Blue
+			player.collision_mask = 4
 			Globals.can_damage_player = false
 			
 			player.aura_sprite.hide()
@@ -43,6 +47,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.GREEN: # Green
+			player.collision_mask = 30
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.hide()

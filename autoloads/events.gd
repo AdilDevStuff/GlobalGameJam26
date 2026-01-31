@@ -1,8 +1,10 @@
 extends Node
 
 @warning_ignore("unused_signal")
-signal MaskSwitched(mask: Globals.Masks)
+signal mask_switched(mask: Globals.Masks)
 @warning_ignore("unused_signal")
-signal Damaged(damage: int)
+signal damaged(damage: int)
 @warning_ignore("unused_signal")
-signal Killed
+signal killed
+@warning_ignore("unused_signal")
+signal health_changed(health_value: int)
