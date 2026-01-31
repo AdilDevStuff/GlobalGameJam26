@@ -15,7 +15,7 @@ func _ready() -> void:
 	Events.health_changed.connect(_on_health_changed)
 	
 	radial_menu.set_items([])
-	radial_menu.add_icon_item(red_texture, "Red", 1)
+	#radial_menu.add_icon_item(red_texture, "Red", 1)
 	radial_menu.add_icon_item(blue_texture, "Blue", 2)
 	radial_menu.add_icon_item(green_texture, "Green", 3)
 

@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://dq5dgm1ngbw0b"]
+
+[ext_resource type="Script" uid="uid://b65l28ikvyqck" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dqkfdxwaoxl7y" path="res://addons/animatedbutton/AnimatedButton.gd" id="2_ekxnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font = ExtResource("1_l6cm7")
+font_size = 102
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font = ExtResource("1_l6cm7")
+font_size = 101
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("1_l6cm7")
+font_size = 85
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("1_l6cm7")
+font_size = 135
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
+font = ExtResource("1_l6cm7")
+font_size = 38
+
+[node name="MainMenu" type="Control" unique_id=965421232 node_paths=PackedStringArray("buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 0.29411766, 0.29411766, 1), Color(0.34509805, 0.46666667, 1, 1), Color(0.54901963, 1, 0.34509805, 1)])
+buttons = NodePath("Buttons")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1818329630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08129525, 0.08129525, 0.08129525, 1)
+
+[node name="Label" type="Label" parent="." unique_id=213170214]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 60.0
+offset_right = 606.0
+offset_bottom = 172.0
+text = "One"
+label_settings = SubResource("LabelSettings_ekxnf")
+
+[node name="Label2" type="Label" parent="." unique_id=809430364]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 133.0
+offset_right = 599.0
+offset_bottom = 245.0
+text = "Face"
+label_settings = SubResource("LabelSettings_bqqt6")
+
+[node name="Label3" type="Label" parent="." unique_id=109769434]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 175.0
+offset_right = 863.0
+offset_bottom = 287.0
+text = "At a"
+label_settings = SubResource("LabelSettings_wu84c")
+
+[node name="Label4" type="Label" parent="." unique_id=1181527314]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 229.0
+offset_right = 759.0
+offset_bottom = 364.0
+text = "Time"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="Label5" type="Label" parent="." unique_id=970652963]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 19.0
+offset_right = 1136.0
+offset_bottom = 100.0
+text = "Made for
+Global Game Jam 26"
+label_settings = SubResource("LabelSettings_rtw2f")
+horizontal_alignment = 2
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=530850715]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -218.0
+offset_right = 143.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Play" type="Button" parent="Buttons" unique_id=1566678067]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "Play"
+flat = true
+script = ExtResource("2_ekxnf")
+metadata/_custom_type_script = "uid://dqkfdxwaoxl7y"
+
+[node name="Exit" type="Button" parent="Buttons" unique_id=1712652251]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+flat = true
+script = ExtResource("2_ekxnf")
+metadata/_custom_type_script = "uid://dqkfdxwaoxl7y"
+
+[node name="FaceTextTimer" type="Timer" parent="." unique_id=13665514]
+wait_time = 2.0
+autostart = true
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="FaceTextTimer" to="." method="_on_face_text_timer_timeout"]
