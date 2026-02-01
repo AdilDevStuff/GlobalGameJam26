@@ -19,7 +19,7 @@ func _input(_event: InputEvent) -> void:
 		elif Input.is_action_just_pressed("switch_blue"):
 			switch_mask(Globals.Masks.GHOST)
 		elif Input.is_action_just_pressed("switch_green"):
-			switch_mask(Globals.Masks.ENVIRONMENT)
+			switch_mask(Globals.Masks.EAGLE)
 
 func _process(_delta: float) -> void:
 	cooldown_info.text = "Cooldown %.2f" % cooldown_timer.time_left 

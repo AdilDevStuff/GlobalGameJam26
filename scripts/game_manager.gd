@@ -48,7 +48,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			player.modulate = Color("5877ffff")
 			player.can_attack = false
 			hidden_tileset.enabled = false
-		Globals.Masks.ENVIRONMENT: # Green
+		Globals.Masks.EAGLE: # Green
 			player.collision_mask = 30
 			Globals.can_damage_player = true
 			

@@ -4,7 +4,7 @@ enum Masks {
 	NONE,
 	RED,
 	GHOST,
-	ENVIRONMENT,
+	EAGLE,
 }
 
 var current_mask: int
