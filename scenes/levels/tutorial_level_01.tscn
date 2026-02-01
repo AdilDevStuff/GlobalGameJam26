@@ -80,7 +80,7 @@ theme_override_fonts/normal_font = ExtResource("3_j2tva")
 theme_override_font_sizes/normal_font_size = 67
 bbcode_enabled = true
 text = "Wear ghost mask
-[font_size=34](LMB to open wheel)
+[font_size=34](RMB to open wheel)
 [/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
