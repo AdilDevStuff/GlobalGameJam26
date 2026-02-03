@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://84l5kyexw5o2"]
 
-[ext_resource type="Script" uid="uid://d1rgggqpo1jtk" path="res://scripts/game_ui.gd" id="1_w06h8"]
+[ext_resource type="Script" uid="uid://d1rgggqpo1jtk" path="res://scenes/ui/game_ui.gd" id="1_w06h8"]
 [ext_resource type="Texture2D" uid="uid://1rjsrrgoq37b" path="res://assets/ui/assets_None.png" id="2_dq8h5"]
 [ext_resource type="Texture2D" uid="uid://dnh0wk05r4c1j" path="res://assets/ui/assets_Red.png" id="3_imdmy"]
 [ext_resource type="Texture2D" uid="uid://23t4kt4vlsfq" path="res://assets/ui/assets_Blue.png" id="4_morta"]
@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="6_imdmy"]
 [ext_resource type="Script" uid="uid://b2jrodpd2i1c8" path="res://addons/RadialMenu/RadialMenu.gd" id="6_l4xu8"]
 [ext_resource type="Script" uid="uid://b3hprairb2cbt" path="res://scripts/game_manager.gd" id="7_3iy5o"]
-[ext_resource type="PackedScene" uid="uid://dkk6wx1c02l8y" path="res://scenes/player.tscn" id="8_p3ew5"]
+[ext_resource type="PackedScene" uid="uid://dkk6wx1c02l8y" path="res://scenes/player/player.tscn" id="8_p3ew5"]
 [ext_resource type="Texture2D" uid="uid://bjdfmnuel0svb" path="res://assets/level/Tileset.png" id="9_x2afm"]
 [ext_resource type="Texture2D" uid="uid://c3nbyp75p4gjk" path="res://assets/level/spike_tile.png" id="10_1vve2"]
 [ext_resource type="Script" uid="uid://dvfmxlxdmpunl" path="res://addons/2d_shapes/shapes/Polygon.gd" id="11_dq8h5"]

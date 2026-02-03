@@ -3,6 +3,10 @@ class_name GameManager
 
 @export_file_path("*.tscn") var next_level_path: String
 
+@export var blue_color: Color = Color("5877ffff")
+@export var green_color: Color = Color("8cff58ff")
+@export var red_color: Color = Color("ff4b4bff") 
+
 @export var hidden_tileset: TileMapLayer
 @export var level_end: Area2D
 
@@ -29,7 +33,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			player.collision_mask = 30
 			
 			player.aura_sprite.hide()
-			Globals.new_tween(player, "modulate", Color("ffffff"), 0.2)
+			Globals.new_tween(player, "modulate", Color.WHITE, 0.2)
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.RED: # Red
@@ -37,7 +41,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.show()
-			Globals.new_tween(player, "modulate", Color("ff4b4bff"), 0.2)
+			Globals.new_tween(player, "modulate", red_color, 0.2)
 			player.can_attack = true
 			hidden_tileset.enabled = false
 		Globals.Masks.GHOST: # Blue
@@ -45,7 +49,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = false
 			
 			player.aura_sprite.hide()
-			Globals.new_tween(player, "modulate", Color("5877ffff"), 0.2)
+			Globals.new_tween(player, "modulate", blue_color, 0.2)
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.EAGLE: # Green
@@ -53,7 +57,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.hide()
-			Globals.new_tween(player, "modulate", Color("8cff58ff"), 0.2)
+			Globals.new_tween(player, "modulate", green_color, 0.2)
 			hidden_tileset.enabled = true
 			player.can_attack = false
 

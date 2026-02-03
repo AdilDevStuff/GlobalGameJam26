@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GlobalGameJam26"
+config/name="One Face At a Time"
 run/main_scene="uid://dq5dgm1ngbw0b"
 config/features=PackedStringArray("4.6")
 config/icon="uid://d0ts7j541f7yd"

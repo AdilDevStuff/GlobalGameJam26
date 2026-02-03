@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5q6tspxawt3e"]
 
-[ext_resource type="PackedScene" uid="uid://blkx3xvx8c6l8" path="res://scenes/enemy.tscn" id="1_fw00r"]
+[ext_resource type="PackedScene" uid="uid://blkx3xvx8c6l8" path="res://scenes/enemy/enemy.tscn" id="1_fw00r"]
 
 [sub_resource type="Animation" id="Animation_ov72x"]
 length = 0.001

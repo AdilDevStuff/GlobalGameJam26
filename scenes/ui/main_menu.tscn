@@ -1,35 +1,35 @@
 [gd_scene format=3 uid="uid://dq5dgm1ngbw0b"]
 
-[ext_resource type="Script" uid="uid://b65l28ikvyqck" path="res://scripts/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="1_l6cm7"]
-[ext_resource type="Script" uid="uid://dqkfdxwaoxl7y" path="res://addons/animatedbutton/AnimatedButton.gd" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://b65l28ikvyqck" path="res://scenes/ui/main_menu.gd" id="1_1g8jr"]
+[ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="2_m1kxf"]
+[ext_resource type="Script" uid="uid://dqkfdxwaoxl7y" path="res://addons/animatedbutton/AnimatedButton.gd" id="3_x2yvf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
-font = ExtResource("1_l6cm7")
+font = ExtResource("2_m1kxf")
 font_size = 102
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
-font = ExtResource("1_l6cm7")
+font = ExtResource("2_m1kxf")
 font_size = 101
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
-font = ExtResource("1_l6cm7")
+font = ExtResource("2_m1kxf")
 font_size = 85
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
-font = ExtResource("1_l6cm7")
+font = ExtResource("2_m1kxf")
 font_size = 135
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
-font = ExtResource("1_l6cm7")
+font = ExtResource("2_m1kxf")
 font_size = 38
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bqqt6")
+script = ExtResource("1_1g8jr")
 colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 0.29411766, 0.29411766, 1), Color(0.34509805, 0.46666667, 1, 1), Color(0.54901963, 1, 0.34509805, 1)])
 buttons = NodePath("Buttons")
 
@@ -120,22 +120,22 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_m1kxf")
 theme_override_font_sizes/font_size = 64
 text = "Play"
 flat = true
-script = ExtResource("2_ekxnf")
+script = ExtResource("3_x2yvf")
 metadata/_custom_type_script = "uid://dqkfdxwaoxl7y"
 
 [node name="Exit" type="Button" parent="Buttons" unique_id=1712652251]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_m1kxf")
 theme_override_font_sizes/font_size = 64
 text = "Exit"
 flat = true
-script = ExtResource("2_ekxnf")
+script = ExtResource("3_x2yvf")
 metadata/_custom_type_script = "uid://dqkfdxwaoxl7y"
 
 [node name="FaceTextTimer" type="Timer" parent="." unique_id=13665514]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bntjng2xj52wc"]
 
 [ext_resource type="PackedScene" uid="uid://84l5kyexw5o2" path="res://scenes/levels/level_base.tscn" id="1_ogcvy"]
-[ext_resource type="PackedScene" uid="uid://c5q6tspxawt3e" path="res://scenes/enemy_path.tscn" id="2_j2tva"]
+[ext_resource type="PackedScene" uid="uid://c5q6tspxawt3e" path="res://scenes/enemy/enemy_path.tscn" id="2_j2tva"]
 [ext_resource type="FontFile" uid="uid://bibb5a6bo6djl" path="res://assets/Scabber-q2Mn0.ttf" id="3_j2tva"]
 
 [sub_resource type="Curve2D" id="Curve2D_6iamk"]

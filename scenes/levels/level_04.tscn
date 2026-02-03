@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://r24l105285sf"]
 
 [ext_resource type="PackedScene" uid="uid://84l5kyexw5o2" path="res://scenes/levels/level_base.tscn" id="1_31sm7"]
-[ext_resource type="PackedScene" uid="uid://c5q6tspxawt3e" path="res://scenes/enemy_path.tscn" id="2_wu80y"]
+[ext_resource type="PackedScene" uid="uid://c5q6tspxawt3e" path="res://scenes/enemy/enemy_path.tscn" id="2_wu80y"]
 
 [sub_resource type="Curve2D" id="Curve2D_6iamk"]
 _data = {
