@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://eitrl4f7f3hp" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://ceqpilsie3yls" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://cgywxyffl1snf" path="res://addons/trail_2d/trail_2d.gd" id="4_dqkch"]
-[ext_resource type="Texture2D" uid="uid://1rjsrrgoq37b" path="res://assets/assets_None.png" id="6_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://c64ltd2c17qc5" path="res://assets/player_switch_particles.png" id="7_fjrip"]
+[ext_resource type="Texture2D" uid="uid://1rjsrrgoq37b" path="res://assets/ui/assets_None.png" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://c64ltd2c17qc5" path="res://assets/player/player_switch_particles.png" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(62, 62)
@@ -128,6 +128,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AbilityBar:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_smehm"]
 resource_name = "death"
@@ -182,6 +194,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AbilityBar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.029294983, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, false]
 }
 
 [sub_resource type="Animation" id="Animation_qlg0r"]

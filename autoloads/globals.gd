@@ -15,3 +15,7 @@ var enemy_slow_speed: float
 var can_enemy_chase: bool = true
 var can_damage_player: bool = true
 var can_switch: bool = true
+
+func new_tween(object: Object, nodepath: NodePath, final_value: Variant, duration: float) -> void:
+	var tween = create_tween()
+	tween.tween_property(object, nodepath, final_value, duration)

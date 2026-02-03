@@ -43,6 +43,7 @@ func switch_mask(selected_mask: Globals.Masks) -> void:
 
 func _on_ability_timer_timeout() -> void:
 	cooldown_info.show()
+	SoundManager.cooldown_sfx.play()
 
 	Globals.can_switch = false
 	ability_bar.hide()

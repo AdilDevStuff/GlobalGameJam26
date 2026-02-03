@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5gvc0dw4gfdw"
-path="res://.godot/imported/assets_Green.png-358133255bebf0d4302b57d1d46f9891.ctex"
+uid="uid://c3nbyp75p4gjk"
+path="res://.godot/imported/spike_tile.png-a5f473f6edf4e1a3932a11d11bb34a42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_Green.png"
-dest_files=["res://.godot/imported/assets_Green.png-358133255bebf0d4302b57d1d46f9891.ctex"]
+source_file="res://assets/level/spike_tile.png"
+dest_files=["res://.godot/imported/spike_tile.png-a5f473f6edf4e1a3932a11d11bb34a42.ctex"]
 
 [params]
 

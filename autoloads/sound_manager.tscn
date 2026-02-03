@@ -10,17 +10,23 @@ random_pitch = 1.0116194
 streams_count = 1
 stream_0/stream = ExtResource("2_xy5rq")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x8bxb"]
+random_pitch = 1.0116194
+streams_count = 1
+stream_0/stream = ExtResource("3_vwtpm")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vwtpm"]
 random_pitch = 1.0116194
 streams_count = 1
 stream_0/stream = ExtResource("2_xy5rq")
 
-[node name="SoundManager" type="Node" unique_id=406561184 node_paths=PackedStringArray("jump_sfx", "switch_sfx", "death_sfx", "hurt_sfx")]
+[node name="SoundManager" type="Node" unique_id=406561184 node_paths=PackedStringArray("jump_sfx", "switch_sfx", "death_sfx", "hurt_sfx", "cooldown_sfx")]
 script = ExtResource("1_4udv5")
 jump_sfx = NodePath("JumpSfx")
 switch_sfx = NodePath("Switch")
 death_sfx = NodePath("DeathSfx")
 hurt_sfx = NodePath("HurtSfx")
+cooldown_sfx = NodePath("CooldownSFX")
 
 [node name="JumpSfx" type="AudioStreamPlayer" parent="." unique_id=599912214]
 stream = ExtResource("2_8ikdl")
@@ -36,6 +42,10 @@ pitch_scale = 2.0
 stream = SubResource("AudioStreamRandomizer_8ikdl")
 volume_db = -5.0
 pitch_scale = 2.0
+
+[node name="CooldownSFX" type="AudioStreamPlayer" parent="." unique_id=1196103248]
+stream = SubResource("AudioStreamRandomizer_x8bxb")
+volume_db = -5.0
 
 [node name="HurtSfx" type="AudioStreamPlayer" parent="." unique_id=1492994241]
 stream = SubResource("AudioStreamRandomizer_vwtpm")

@@ -32,7 +32,7 @@ var current_health: int = 0
 var current_speed: float
 
 var jump_count: int = 0
-var direction: int = 0
+var direction: float = 0
 
 var is_grounded: bool = false
 var can_attack: bool = false

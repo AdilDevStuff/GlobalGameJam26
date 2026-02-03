@@ -29,7 +29,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			player.collision_mask = 30
 			
 			player.aura_sprite.hide()
-			player.modulate = Color("ffffffff")
+			Globals.new_tween(player, "modulate", Color("ffffff"), 0.2)
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.RED: # Red
@@ -37,7 +37,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.show()
-			player.modulate = Color("ff4b4bff")
+			Globals.new_tween(player, "modulate", Color("ff4b4bff"), 0.2)
 			player.can_attack = true
 			hidden_tileset.enabled = false
 		Globals.Masks.GHOST: # Blue
@@ -45,7 +45,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = false
 			
 			player.aura_sprite.hide()
-			player.modulate = Color("5877ffff")
+			Globals.new_tween(player, "modulate", Color("5877ffff"), 0.2)
 			player.can_attack = false
 			hidden_tileset.enabled = false
 		Globals.Masks.EAGLE: # Green
@@ -53,7 +53,7 @@ func on_mask_switched(mask: Globals.Masks) -> void:
 			Globals.can_damage_player = true
 			
 			player.aura_sprite.hide()
-			player.modulate = Color("8cff58ff")
+			Globals.new_tween(player, "modulate", Color("8cff58ff"), 0.2)
 			hidden_tileset.enabled = true
 			player.can_attack = false
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjdfmnuel0svb"
-path="res://.godot/imported/Tileset.png-8357b5d8a5c4813438aa7187a7fecf4c.ctex"
+uid="uid://c64ltd2c17qc5"
+path="res://.godot/imported/player_switch_particles.png-f3d889c4f88e6728b3b8d040307ad15a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-8357b5d8a5c4813438aa7187a7fecf4c.ctex"]
+source_file="res://assets/player/player_switch_particles.png"
+dest_files=["res://.godot/imported/player_switch_particles.png-f3d889c4f88e6728b3b8d040307ad15a.ctex"]
 
 [params]
 
